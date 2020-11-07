@@ -7,12 +7,14 @@
     color:#fff;
 }
 .register-form,
-.rs-pw
+.rs-pw,
+.login-form
 {
     background: url(Images/bg.jpg);
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+    font-family: sans-serif;
 }
 #ui{
     box-shadow: 0 15px 25px  rgba(0, 0, 0, 0.5);
@@ -21,40 +23,51 @@
     border-radius: 10px;
     color: #fff;
     padding-bottom: 40px;
+    margin-top: 60px;
     
 }
 
 #ui label, h1,p{
-    
     text-align: center;
     
+}
+#ui p {
+    margin-top: 20px;
+}
+#ui{
+    padding: 16px;
 }
 
 
 #ui button {
-    justify-content: center;
-    padding: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #ff652f;
+    border: none;
+    outline: none;
     margin: auto;
-    border-radius: 10px;
-   justify-content: end;
-}
-
-.login-form
-{
-    background-size: cover;
-    font-family: sans-serif;
-    background: url(Images/bg.jpg) no-repeat center;
-    background-position: center center;
-}
-
-.login-wrapper
-
-{
-    height: 100vh;
-    width: 100vh;
-    display: flex;
     justify-content: center;
-    align-items: center;
+    position: absolute;    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.login-wrapper,
+.forgot-pw
+{
+    position: absolute;    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+  align-items: center;
+
 }
 
 .form
@@ -88,6 +101,12 @@
     text-align: center;
     letter-spacing: 1px;
     margin-bottom: 2rem;
+    color: #ff652f;
+    
+}
+.form p {
+    margin-top: 2rem;
+    padding: auto;
 }
 .form .input-group
 {
@@ -106,7 +125,8 @@
     color: inherit;
 
 }
-.form .input-group label{
+
+.form .input-group label {
     position: absolute;
     top: 0;
     left: 0;
@@ -114,7 +134,14 @@
     font-size: 1rem;
     pointer-events: none;
     transition: .3s ease-out;
-}
+  }
+  .form .input-group input:focus + label,
+  .form .input-group input:valid + label {
+    transform: translateY(-18px);
+    color: #ff652f;
+    font-size: .8rem;
+  }
+
 .form-group .form-group label{
     position: absolute;
     top: 0;
@@ -124,12 +151,6 @@
     pointer-events: none;
     transition: .3s ease-out;
 }
-.form .input-group input:focus +label,
-.form .input-group input:valid +label{
-    transform: translateY(-18px);
-    color: #ff652f;
-    font-size: .8rem;
-}
 .form-group .form-group input:focus +label,
 .form-group .form-group input:valid +label{
     transform: translateY(-20px);
@@ -137,9 +158,7 @@
     font-size: 1rem;
 }
 
-
-.submit-btn,
-.btn-success    
+.submit-btn
 {
     display: block;
     margin-left: auto;
@@ -152,12 +171,6 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.forgot-pw,
-.sign-up{
-    margin-top: auto;
-    color: inherit;
 }
 
 
