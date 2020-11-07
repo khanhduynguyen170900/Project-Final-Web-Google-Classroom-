@@ -1,5 +1,4 @@
-
-
+<?php ob_start()?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +13,41 @@
 
 </head>
 <body class ="login-form">
-<?php
+
+    <div class="login-wrapper">
+        <form  method="post" action="" class="form">
+          <img src="img/avatar.png" alt="">
+          <h2>Đăng nhập</h2>
+          <div class="input-group">
+            <input type="text" name="username" id="loginUser" required>
+            <label for="loginUser">Tên email</label>
+          </div>
+          <div class="input-group">
+            <input type="password" name="password" id="loginPassword" required>
+            <label for="loginPassword">Mật khẩu</label>
+          </div>
+         
+          <?php
+              if (!empty($error)) {
+                  echo "<div style='color:red' class='alert alert-danger'>$error</div>";
+              }
+          ?>
+         
+          <div class="form-group custom-control custom-checkbox">
+              <input <?= isset($_POST['remember']) ? 'checked' : '' ?> name="remember" type="checkbox" class="custom-control-input" id="remember">
+              <label class="custom-control-label" for="remember">Remember login</label>
+          </div>
+
+          <input type="submit" value="Login" class="submit-btn">
+
+          <div class="  ">
+              <p>Don't have an account yet? <a href="register.php">Register now</a>.</p>
+              <p>Forgot your password? <a href="FogotPW.php">Reset your password</a>.</p>
+          </div>
+        </form>
+        
+    </div>
+    <?php
 
   require_once('connect.php');
 
@@ -32,14 +65,15 @@
         $error = 'Please enter your password!';
       }
       else{
+        
         $result = login($username,$password);
         if($result['code']==0)
         {
           $data = $result['data'];
           $_SESSION['username'] = $username;
 
-          header('Location:home.php');
-          exit();
+          header('Location:home.html');
+          
         }
         else
         {
@@ -47,41 +81,8 @@
         }
 
       }
+      echo "<div style='color:red' class='alert alert-danger'>$error</div>";
   }
 ?>
-    <div class="login-wrapper">
-        <form  method="post" action="" class="form">
-          <img src="img/avatar.png" alt="">
-          <h2>Đăng nhập</h2>
-          <div class="input-group">
-            <input type="text" name="username" id="loginUser" >
-            <label for="loginUser">Tên email</label>
-          </div>
-          <div class="input-group">
-            <input type="password" name="password" id="loginPassword">
-            <label for="loginPassword">Mật khẩu</label>
-          </div>
-         
-          <?php
-              if (!empty($error)) {
-                  echo "<div style='color:red' class='alert alert-danger'>$error</div>";
-              }
-          ?>
-         
-          <div class="form-group custom-control custom-checkbox">
-              <input <?= isset($_POST['remember']) ? 'checked' : '' ?> name="remember" type="checkbox" class="custom-control-input" id="remember">
-              <label class="custom-control-label" for="remember">Remember login</label>
-          </div>
-
-          <input type="submit" value="Login" class="submit-btn">
-
-          <div class="form-group">
-              <p>Don't have an account yet? <a href="register.php">Register now</a>.</p>
-              <p>Forgot your password? <a href="FogotPW.php">Reset your password</a>.</p>
-          </div>
-        </form>
-        
-    </div>
-    
 </body>
 </html>
