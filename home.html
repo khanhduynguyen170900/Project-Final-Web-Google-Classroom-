@@ -7,14 +7,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <title>HOME</title>
 </head>
 <body>
-    <h1 style="text-align: center">DOGE CLASSROOM</h1>
     <style>
         .card{   
-            margin-bottom: 15px;
-            margin-left: 10px;
+            margin: 20px 0px 15px 10px; 
+        }
+
+        .card-collums{
+            margin-top:80px;
+            background-color: #f0defd;
+            height: 100%;
         }
 
         .row{
@@ -26,19 +31,19 @@
             width: 0;
             position: fixed;
             z-index: 1;
-            top: 0;
+            top: 60px;
             left: 0;
-            background-color: white;
+            background-color: #fddfdf;
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
         }
-
+        
         .sidenav a {
             padding: 10px 10px 10px 32px;
             text-decoration: none;
             font-size: 25px;
-            color: #818181;
+            color: black;
             display: block;
             transition: 0.3s;
         }
@@ -47,126 +52,335 @@
             color: #f1f1f1;
         }
 
-        .sidenav .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
+        .sidenav .closeMenubtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
         }
-    
+
+        .joinsrc .closeJoinbtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .joinsrc {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 60px;
+            right: 0;
+            background-color: #def3fd;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            text-align:center;
+        }
+
+        .joinsrc a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .navbar {
+            background-color: #fcf7de;  
+        }
+
+        .navbar a {
+            margin-left: 10px;
+            font-size: 36px;
+        }
+
+        form {
+            width: 30%;
+            min-width: 444px;
+            margin: 30px auto;
+        }
+
+        table {
+            margin: auto;
+            padding: 16px 26px;
+            border-radius: 10px;
+        }
+        
+        button {
+            margin-top: 10px;
+            margin-left: 5px;
+            border: 1px solid rgba(141, 140, 140, 0.644);
+            padding: 10px 30px;
+            background-color: #defde0;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #ffdfd3
+        }
+
+        input[type="text"] {
+            height: 44px;
+            margin-top: 10px;
+            min-width: 250px;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(141, 140, 140, 0.644);
+        }
+
         @media screen and (max-height: 450px) {
-        .sidenav {padding-top: 15px;}
-        .sidenav a {font-size: 18px;}
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
         }
     </style>
 
     <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+        function togMenu() {
+            var nav = document.getElementById("leftMenu");
+            if (nav.style.width == '250px') {
+                nav.style.width = '0';
+                nav.style.opacity = 0;
+            } 
+            else {
+                nav.style.width = "250px";
+                nav.style.opacity = 1;
+            }
         }
-        
+    
         function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("leftMenu").style.width = "0";
+        }
+
+        function openJoin() {
+            document.getElementById("joining").style.width = "100%";
+        }
+
+        function closeJoin(){
+            document.getElementById("joining").style.width = "0";
         }
     </script>
-
-    <div id="leftsidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Class 1</a>
-        <a href="#">Class 2</a>
-        <a href="#">Class 3</a>
-        <a href="#">Class 4</a>
-    </div>
-
-    <div>
-        <span style="font-size:30px;cursor:pointer;margin-left:40px" onclick="openNav()">&#9776;</span>
-    </div>
     
-    <div class="card-collums">
-        <div class="row">
-            <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
-                <img class="card-img-top" src="j.jpg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">TEST</h4>
-                    <p class="card-text">CLASS DESCRIPTIONS</p>
-                    <a href="#" class="btn btn-primary">GO TO CLASS</a>
+    <main>
+        <div id="leftMenu" class="sidenav">
+            <a href="javascript:void(0)" class="closeMenubtn" onclick="closeNav()">&times;</a>
+            <a href="#">Class 1</a>
+            <a href="#">Class 2</a>
+            <a href="#">Class 3</a>
+            <a href="#">Class 4</a>
+        </div>
+    
+        <div id="joining" class="joinsrc">
+            <a href="javascript:void(0)" class="closeJoinbtn" onclick="closeJoin()">&times;</a>
+            <form>
+                <table>
+                    <tr>
+                        <p style="font-size: larger;">Input your Class Code to join</p>
+                        <p>Ask your teacher for the class code, then enter it here</p>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="classcode" type="text" placeholder="Class Code">
+                        </td>
+                        <td>
+                            <button type="submit">Join</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+            <span style="font-size:30px;cursor:pointer" onclick="togMenu()">&#9776;</span>
+            <a class="navbar-brand mb-0 h1" href="#">DOGE CLASSROOM</a>
+            <span class="fas fa-pencil-alt ml-auto p-2" style="font-size:30px" onclick="openJoin()"></span>  
+        </nav>
+        
+        <div class="card-collums">
+            <div class="row">
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
-                <img class="card-img-top" src="j.jpg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">TEST</h4>
-                    <p class="card-text">CLASS DESCRIPTIONS.</p>
-                    <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
-                <img class="card-img-top" src="j.jpg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">TEST</h4>
-                    <p class="card-text">CLASS DESCRIPTIONS.</p>
-                    <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
-                <img class="card-img-top" src="j.jpg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">TEST</h4>
-                    <p class="card-text">CLASS DESCRIPTIONS.</p>
-                    <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
-                <img class="card-img-top" src="j.jpg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">TEST</h4>
-                    <p class="card-text">CLASS DESCRIPTIONS.</p>
-                    <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
-                <img class="card-img-top" src="j.jpg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">TEST</h4>
-                    <p class="card-text">CLASS DESCRIPTIONS.</p>
-                    <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
-                <img class="card-img-top" src="j.jpg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">TEST</h4>
-                    <p class="card-text">CLASS DESCRIPTIONS.</p>
-                    <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
-                <img class="card-img-top" src="j.jpg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">TEST</h4>
-                    <p class="card-text">CLASS DESCRIPTIONS.</p>
-                    <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
-                <img class="card-img-top" src="j.jpg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">TEST</h4>
-                    <p class="card-text">CLASS DESCRIPTIONS.</p>
-                    <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
-                <img class="card-img-top" src="j.jpg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">TEST</h4>
-                    <p class="card-text">CLASS DESCRIPTIONS.</p>
-                    <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
+                </div>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
+                </div>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
+                </div>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
+                </div>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
+                </div>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
+                </div>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
+                </div>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
+                </div>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
+                </div>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
+                </div>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
+                </div>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
+                </div>
+                <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 border-info">
+                    <img class="card-img-top" src="j.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">TEST</h4>
+                        <p class="card-text">CLASS DESCRIPTIONS.</p>
+                        <a href="#" class="btn btn-primary">GO TO CLASS</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
+    </main>
 </body>
 </html>
