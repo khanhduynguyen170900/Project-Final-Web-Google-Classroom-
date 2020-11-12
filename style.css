@@ -1,177 +1,211 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-#title{
-    color:#fff;
-}
-.register-form,
-.rs-pw,
-.login-form
-{
-    background: url(Images/bg.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    font-family: sans-serif;
-}
-#ui{
-    box-shadow: 0 15px 25px  rgba(0, 0, 0, 0.5);
-    position: relative;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    color: #fff;
-    padding-bottom: 40px;
-    margin-top: 60px;
-    
+main{
+    background-color: #f0defd;
 }
 
-#ui label, h1,p{
-    text-align: center;
-    
-}
-#ui p {
-    margin-top: 20px;
-}
-#ui{
-    padding: 16px;
+.card{   
+    margin: 20px 0px 20px 10px; 
 }
 
-
-#ui button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    background: #ff652f;
-    border: none;
-    outline: none;
-    margin: auto;
-    justify-content: center;
-    position: absolute;    
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    
+.card-groups{
+    margin-top:80px;
+    background-color: #f0defd;
+    padding: 0px 50px 0px 50px;
+    min-height: 100vh;
 }
 
-.login-wrapper,
-.forgot-pw
-{
-    position: absolute;    
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    justify-content: center;
-  align-items: center;
-
-}
-
-.form
-{
-    position: relative;
-    width: 100%;
-    max-width: 380px;
-    padding: 80px 40px 40px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    color: #fff;
-    box-shadow: 0 15px 25px  rgba(0, 0, 0, 0.5);
-
-}
-
-.form::before{
-    content:'';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
+.sidenav {
     height: 100%;
-    background: rgba(255,255,255, 0.08);
-    transform: skewX(-26deg);
-    transform-origin: bottom left;
-    border-radius: 10px;
-    pointer-events: none;
-}
-
-.form h2{
-    text-align: center;
-    letter-spacing: 1px;
-    margin-bottom: 2rem;
-    color: #ff652f;
-    
-}
-.form p {
-    margin-top: 2rem;
-    padding: auto;
-}
-.form .input-group
-{
-    position: relative;
-}
-.form .input-group input,
-.form-group .form-group input{
-    width: 100%;
-    padding: 10px 0 ;
-    font-size: 1rem;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background-color: transparent;
-    color: inherit;
-
-}
-
-.form .input-group label {
-    position: absolute;
-    top: 0;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 60px;
     left: 0;
-    padding: 10px 0;
-    font-size: 1rem;
-    pointer-events: none;
-    transition: .3s ease-out;
-  }
-  .form .input-group input:focus + label,
-  .form .input-group input:valid + label {
-    transform: translateY(-18px);
-    color: #ff652f;
-    font-size: .8rem;
-  }
+    background-color: #fddfdf;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
 
-.form-group .form-group label{
+.sidenav a {
+    padding: 10px 10px 10px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closeMenubtn {
     position: absolute;
     top: 0;
-    left: 2;
-    padding: 10px 0;
-    font-size: 1.5rem;
-    pointer-events: none;
-    transition: .3s ease-out;
-}
-.form-group .form-group input:focus +label,
-.form-group .form-group input:valid +label{
-    transform: translateY(-20px);
-    color: #ff652f;
-    font-size: 1rem;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
 
-.submit-btn
-{
+.joinsrc .closeJoinbtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.joinsrc {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 60px;
+    right: 0;
+    background-color: #def3fd;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+}
+
+.joinsrc a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
     display: block;
-    margin-left: auto;
-    border: none;
-    outline: none;
-    background: #ff652f;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 10px 20px;
-    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.createsrc .closeCreatebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.createsrc {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 60px;
+    right: 0;
+    background-color: #def3fd;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.createsrc a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+label {
+    font-size: larger;
+    font-weight: bold;
+    text-align: left;
+}
+
+.navbar {
+    background-color: #fcf7de;  
+    width: 100%;
+    padding: 8px 0px 8px 16px;
+}
+
+.nav-tabs a {
+    font-size: 30px;
+    margin-right: 20px;
+    color: black;
+}
+
+.nav-tabs {
+    margin-left: 400px;
+    margin-top: 80px;
+}
+
+#homesrc {
+    min-height: 100vh;
+}
+
+#classworksrc {
+    min-height: 100vh;
+}
+
+#peoplesrc {
+    min-height: 100vh;
+}
+
+.navbar-brand {
+    margin-left: 10px;
+    font-size: 36px;
+}
+
+.navbar span {
+    font-size: 30px;
     cursor: pointer;
 }
 
+form {
+    width: 30%;
+    min-width: 444px;
+    margin: 30px auto;
+}
 
+table {
+    margin: auto;
+    padding: 16px 26px;
+    border-radius: 10px;
+}
 
+#joinbtn {
+    margin-top: 10px;
+    margin-left: 5px;
+    border: 1px solid rgba(141, 140, 140, 0.644);
+    padding: 10px 30px;
+    background-color: #dabfde;
+    border-radius: 4px;
+}
+
+#createbtn {
+    border: 1px solid rgba(141, 140, 140, 0.644);
+    padding: 10px 30px;
+    background-color: #dabfde;
+    border-radius: 4px;
+}
+
+#joinbtn:hover {
+    background-color: #ffdfd3
+}
+
+#createbtn:hover {
+    background-color: #ffdfd3
+}
+
+input[type="text"] {
+    height: 44px;
+    margin-top: 10px;
+    min-width: 250px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(141, 140, 140, 0.644);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fcf7de; 
+    font-size: 30px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
